@@ -1,7 +1,141 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "mtgpool": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/mtgpool",
+      "sourceRoot": "apps/mtgpool/src",
+      "prefix": "grundle-den",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mtgpool",
+            "index": "apps/mtgpool/src/index.html",
+            "main": "apps/mtgpool/src/main.ts",
+            "polyfills": "apps/mtgpool/src/polyfills.ts",
+            "tsConfig": "apps/mtgpool/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/mtgpool/src/favicon.ico",
+              "apps/mtgpool/src/assets"
+            ],
+            "styles": ["apps/mtgpool/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mtgpool/src/environments/environment.ts",
+                  "with": "apps/mtgpool/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mtgpool:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mtgpool:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mtgpool:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mtgpool/tsconfig.app.json",
+              "apps/mtgpool/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/mtgpool/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/mtgpool/jest.config.js",
+            "tsConfig": "apps/mtgpool/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/mtgpool/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "mtgpool-e2e": {
+      "root": "apps/mtgpool-e2e",
+      "sourceRoot": "apps/mtgpool-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/mtgpool-e2e/cypress.json",
+            "tsConfig": "apps/mtgpool-e2e/tsconfig.e2e.json",
+            "devServerTarget": "mtgpool:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mtgpool:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/mtgpool-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/mtgpool-e2e/**"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "mtgpool"
 }

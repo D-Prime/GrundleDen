@@ -10,5 +10,13 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "mtgpool": {
+      "tags": []
+    },
+    "mtgpool-e2e": {
+      "tags": [],
+      "implicitDependencies": ["mtgpool"]
+    }
+  }
 }
