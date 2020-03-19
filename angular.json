@@ -10,7 +10,7 @@
       },
       "root": "apps/mtgpool",
       "sourceRoot": "apps/mtgpool/src",
-      "prefix": "grundle-den",
+      "prefix": "mtg",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
