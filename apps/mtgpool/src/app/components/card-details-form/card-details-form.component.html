@@ -1,0 +1,66 @@
+<form>
+  <mat-form-field class="full-width">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Enter name..." />
+  </mat-form-field>
+
+  <!-- TODO: Add dropdown details for this field to allow for  -->
+  <mat-form-field class="full-width">
+    <mat-label>Mana cost</mat-label>
+    <input matInput placeholder="Enter mana cost..." />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Type</mat-label>
+    <input matInput placeholder="Enter type..." />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Expansion</mat-label>
+    <mat-select>
+      <mat-option [value]="">
+        - Select expansion -
+      </mat-option>
+      <mat-option [value]="'TEMP'">
+        TEMP
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Rarity</mat-label>
+    <mat-select>
+      <mat-option [value]="">
+        - Select rarity -
+      </mat-option>
+      <mat-option [value]="'TEMP'">
+        TEMP
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Text box</mat-label>
+    <textarea matInput placeholder="Enter text..."></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="half-width">
+    <mat-label>Power</mat-label>
+    <input matInput placeholder="Enter power..." />
+  </mat-form-field>
+
+  <mat-form-field class="half-width">
+    <mat-label>Toughness</mat-label>
+    <input matInput placeholder="Enter toughness..." />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Creator</mat-label>
+    <input matInput placeholder="Enter creator's name..." />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Copyright</mat-label>
+    <input matInput placeholder="Enter copyright..." />
+  </mat-form-field>
+</form>
