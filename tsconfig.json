@@ -17,6 +17,9 @@
     "baseUrl": ".",
     "paths": {
       "@MTGPool/components": ["./apps/mtgpool/src/app/components/public_api"],
+      "@MTGPool/cardsStore": ["./apps/mtgpool/src/app/+card-state/public_api"],
+      "@MTGPool/appStore": ["./apps/mtgpool/src/app/+app-state/public_api"],
+      "@MTGPool/models": ["./apps/mtgpool/src/app/models/public_api"],
       "@Libs/NgMaterial": ["./libs/ng-material/public_api"]
     }
   },
