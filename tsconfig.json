@@ -15,7 +15,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@MTGPool/components": ["./apps/mtgpool/src/app/components/public_api"],
+      "@Libs/NgMaterial": ["./libs/ng-material/public_api"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

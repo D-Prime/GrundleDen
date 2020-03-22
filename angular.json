@@ -25,7 +25,10 @@
               "apps/mtgpool/src/favicon.ico",
               "apps/mtgpool/src/assets"
             ],
-            "styles": ["apps/mtgpool/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "apps/mtgpool/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -83,7 +86,10 @@
               "apps/mtgpool/tsconfig.app.json",
               "apps/mtgpool/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/mtgpool/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/mtgpool/**"
+            ]
           }
         },
         "test": {
@@ -118,8 +124,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/mtgpool-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/mtgpool-e2e/**"]
+            "tsConfig": [
+              "apps/mtgpool-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/mtgpool-e2e/**"
+            ]
           }
         }
       }
