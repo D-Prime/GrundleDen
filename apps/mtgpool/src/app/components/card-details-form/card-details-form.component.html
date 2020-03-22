@@ -10,9 +10,16 @@
     <input matInput placeholder="Enter mana cost..." />
   </mat-form-field>
 
-  <mat-form-field class="full-width">
+  <!-- TODO: Should create card type select control to choose between planeswalker/creature/sorcery/instant/enchantment/etc. -->
+
+  <mat-form-field class="half-width">
     <mat-label>Type</mat-label>
     <input matInput placeholder="Enter type..." />
+  </mat-form-field>
+
+  <mat-form-field class="half-width">
+    <mat-label>Subtype</mat-label>
+    <input matInput placeholder="Enter subtype..." />
   </mat-form-field>
 
   <mat-form-field class="full-width">
@@ -44,6 +51,8 @@
     <textarea matInput placeholder="Enter text..."></textarea>
   </mat-form-field>
 
+  <!-- TODO: Should create abilities control set to only show if planeswalker card type -->
+
   <mat-form-field class="half-width">
     <mat-label>Power</mat-label>
     <input matInput placeholder="Enter power..." />
@@ -53,6 +62,8 @@
     <mat-label>Toughness</mat-label>
     <input matInput placeholder="Enter toughness..." />
   </mat-form-field>
+
+  <!-- TODO: Should create loyalty control to only show if planeswalker card type -->
 
   <mat-form-field class="full-width">
     <mat-label>Creator</mat-label>
