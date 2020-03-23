@@ -41,3 +41,10 @@ export const getSelected = createSelector(
   getSelectedId,
   (entities, selectedId) => selectedId && entities[selectedId]
 );
+
+// ^ ^ ^ Boilerplate ^ ^ ^
+
+export const getCardGen = createSelector(
+  getCardsState,
+  (state: State) => state.cardGen
+);

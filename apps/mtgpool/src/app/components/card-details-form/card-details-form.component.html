@@ -1,77 +1,116 @@
-<form>
+<form [formGroup]="cardFormGroup">
   <mat-form-field class="full-width">
     <mat-label>Name</mat-label>
-    <input matInput placeholder="Enter name..." />
+    <input
+      matInput
+      placeholder="Enter name..."
+      [formControl]="cardFormGroup.controls?.name"
+    />
   </mat-form-field>
 
   <!-- TODO: Add dropdown details for this field to allow for  -->
   <mat-form-field class="full-width">
     <mat-label>Mana cost</mat-label>
-    <input matInput placeholder="Enter mana cost..." />
+    <input
+      matInput
+      placeholder="Enter mana cost..."
+      [formControl]="cardFormGroup.controls?.manaCost"
+    />
   </mat-form-field>
 
   <!-- TODO: Should create card type select control to choose between planeswalker/creature/sorcery/instant/enchantment/etc. -->
 
   <mat-form-field class="half-width">
     <mat-label>Type</mat-label>
-    <input matInput placeholder="Enter type..." />
+    <input
+      matInput
+      placeholder="Enter type..."
+      [formControl]="cardFormGroup.controls?.type"
+    />
   </mat-form-field>
 
   <mat-form-field class="half-width">
     <mat-label>Subtype</mat-label>
-    <input matInput placeholder="Enter subtype..." />
+    <input
+      matInput
+      placeholder="Enter subtype..."
+      [formControl]="cardFormGroup.controls?.subtype"
+    />
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>Expansion</mat-label>
-    <mat-select>
+    <mat-select [formControl]="cardFormGroup.controls?.expansion">
       <mat-option [value]="">
-        - Select expansion -
+        - None -
       </mat-option>
-      <mat-option [value]="'TEMP'">
-        TEMP
+      <mat-option
+        *ngFor="let expansion of enumArray(cardExpansiohn)"
+        [value]="expansion"
+      >
+        {{ expansion }}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>Rarity</mat-label>
-    <mat-select>
+    <mat-select [formControl]="cardFormGroup.controls?.rarity">
       <mat-option [value]="">
-        - Select rarity -
+        - None -
       </mat-option>
-      <mat-option [value]="'TEMP'">
-        TEMP
+      <mat-option *ngFor="let rarity of enumArray(cardRarity)" [value]="rarity">
+        {{ rarity }}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>Text box</mat-label>
-    <textarea matInput placeholder="Enter text..."></textarea>
+    <textarea
+      matInput
+      placeholder="Enter text..."
+      [formControl]="cardFormGroup.controls?.textbox"
+    ></textarea>
   </mat-form-field>
 
   <!-- TODO: Should create abilities control set to only show if planeswalker card type -->
 
   <mat-form-field class="half-width">
     <mat-label>Power</mat-label>
-    <input matInput placeholder="Enter power..." />
+    <input
+      matInput
+      placeholder="Enter power..."
+      [formControl]="cardFormGroup.controls?.power"
+    />
   </mat-form-field>
 
   <mat-form-field class="half-width">
     <mat-label>Toughness</mat-label>
-    <input matInput placeholder="Enter toughness..." />
+    <input
+      matInput
+      placeholder="Enter toughness..."
+      [formControl]="cardFormGroup.controls?.toughness"
+    />
   </mat-form-field>
 
   <!-- TODO: Should create loyalty control to only show if planeswalker card type -->
 
   <mat-form-field class="full-width">
     <mat-label>Creator</mat-label>
-    <input matInput placeholder="Enter creator's name..." />
+    <input
+      matInput
+      placeholder="Enter creator's name..."
+      [formControl]="cardFormGroup.controls?.creator"
+    />
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>Copyright</mat-label>
-    <input matInput placeholder="Enter copyright..." />
+    <input
+      matInput
+      placeholder="Enter copyright..."
+      [formControl]="cardFormGroup.controls?.copyright"
+    />
   </mat-form-field>
 </form>

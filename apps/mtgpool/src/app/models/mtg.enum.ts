@@ -5,6 +5,6 @@ export enum CardRarity {
   Mythic = 'Mythic'
 }
 
-export enum Expansion {
+export enum CardExpansion {
   TherosBeyondDeath = 'Theros Beyond Death'
 }

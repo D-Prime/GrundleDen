@@ -1,11 +1,11 @@
-import { CardRarity, Expansion } from './mtg.enum';
+import { CardRarity, CardExpansion } from './mtg.enum';
 
 export interface ICard {
   name: string;
   manaCost: string;
   type: string;
   subtype: string;
-  expansion: Expansion;
+  expansion: CardExpansion;
   rarity: CardRarity;
   textbox: string;
   power: number;

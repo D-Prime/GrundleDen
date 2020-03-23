@@ -43,15 +43,15 @@
     "@nestjs/common": "^6.8.3",
     "@nestjs/core": "^6.8.3",
     "@nestjs/platform-express": "^6.8.3",
-    "core-js": "^2.5.4",
-    "reflect-metadata": "^0.1.13",
-    "rxjs": "~6.5.0",
-    "toastr": "^2.1.4",
-    "zone.js": "^0.10.2",
-    "@ngrx/store": "9.0.0",
     "@ngrx/effects": "9.0.0",
     "@ngrx/entity": "9.0.0",
-    "@ngrx/router-store": "9.0.0"
+    "@ngrx/router-store": "9.0.0",
+    "@ngrx/store": "9.0.0",
+    "core-js": "^2.5.4",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.4",
+    "toastr": "^2.1.4",
+    "zone.js": "^0.10.2"
   },
   "devDependencies": {
     "@angular/cli": "9.0.1",
